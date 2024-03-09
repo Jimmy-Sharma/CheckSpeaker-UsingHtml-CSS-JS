@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AudioCheck</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="shortcut icon" href="./assets/megaphone.png" type="image/x-icon">
+</head>
+
+<body>
+    <div id="container">
+        <div id="headingDIV">
+            <h1>
+                AudioCheck: Verify Your Sound in a Click.
+            </h1>
+        </div>
+        <div id="buttonDIV">
+            <button id="check">
+                Start Sound
+            </button>
+            <button id="stop">
+                Stop Sound
+            </button>
+        </div>
+        <div id="DisclaimerDIV">
+            <p id="DisclaimerHeading">Disclaimer:-</p>
+            <p>i :- This tool checks your device speaker by playing sound.</p>
+            <p>ii :- "Start Sound" confirms speaker functionality; "Stop Sound" ends playback.</p>
+            <p>iii :- Results are based on user interaction.</p>
+            <p>iv :- Designed for devices with speakers.</p>
+            <p>v :- Be cautious with volume, especially with headphones.</p>
+            <p>vi :- Use at your own risk; consult a professional if uncertain.</p>
+            <p>vii :- Not liable for device damage or consequences.</p>
+        </div>
+    </div>
+    <script>
+        const audioContext = new AudioContext();
+        const oscillator = audioContext.createOscillator();
+        oscillator.connect(audioContext.destination);
+        document.getElementById("check").addEventListener('click', () => {
+            oscillator.start();
+        })
+        document.getElementById("stop").addEventListener('click', () => {
+            oscillator.stop();
+        })
+    </script>
+</body>
+
+</html>
